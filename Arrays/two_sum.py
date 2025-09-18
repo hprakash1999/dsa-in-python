@@ -1,21 +1,17 @@
-# Problem:  Find two numbers in the array that add up to a specific target.
+# Problem: Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
 def two_sum(nums, target):
-    seen = {}   # number → index
+    seen = {}   # number -> index
     
     for i, n in enumerate(nums):
         diff = target - n
-        print(f"Loop: {i}, Diffrence: {diff}")
-        print(f"Seen before: {seen}")
         
         if diff in seen:
-            print(f"Pair found! {diff}")
-            return (seen[diff], i)   # return indices
+            return [seen[diff], i]   # return indices
         
         seen[n] = i   # store 
-        print(f"Seen after: {seen}")
     
-    return ()
+    return []
 
 
 print(two_sum([2, 5, 3, 9, 7], 11))
